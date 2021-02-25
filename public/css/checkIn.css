@@ -1,0 +1,38 @@
+.billBody{
+    margin: 0 auto;
+    width: 1000px;
+    height:fit-content;
+    background:lightgoldenrodyellow;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    border-radius: 25px
+}
+form{
+    padding: 20px
+}
+label{
+    font: size 10px;
+    color:black
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+  input[type=submit]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+  }
+  input[type=text]:focus {
+    border: 1px solid #4CAF50;
+  }

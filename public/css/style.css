@@ -1,0 +1,31 @@
+*{
+    margin:0
+} 
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}   
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:rgb(98, 98, 235);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:lightcyan;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px
+}
+
+li a:hover {
+  color: black;
+  transition-duration: 200ms;
+}
