@@ -19,21 +19,20 @@
   </ul>
   
     <div class='billBody'>
-        <form method='POST' action='/addNewCostumer'>
             <label>Name:</label>
-            <input type='text' required>
+            <input type='text' name='name' required>
             <label>Nationality:</label>
-            <input type='text' required>
+            <input type='text' name='nationality' required>
             <label>Id Number:</label>
-            <input type='text' required>
+            <input type='text'  name='idNumber'required>
             <label>Id type:</label>
-            <input type='text' required>
+            <input type='text' name='idType' required>
             <label>Contact:</label>
-            <input type='text' required>
+            <input type='text'name='contact' required>
             <label>Assigned Room:</label>
-            <input type='text'>
-            <input type='submit' value='Check In';>
-        </form>
+            <input type='text' name='assignedRoom'>
+            <button onclick="myFunction()"> Check In</button>
     </div>
+   
 </body>
 </html>

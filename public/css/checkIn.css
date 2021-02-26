@@ -3,7 +3,7 @@
     width: 1000px;
     height:fit-content;
     background:lightgoldenrodyellow;
-    padding-top: 10px;
+    padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 0.5px solid black;
@@ -23,8 +23,8 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
 }
-  input[type=submit]{
-    background-color: #4CAF50;
+  button{
+    background-color:#4CAF50;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -33,6 +33,7 @@ input[type=text] {
     cursor: pointer;
     width: 100%;
   }
+
   input[type=text]:focus {
     border: 1px solid #4CAF50;
   }

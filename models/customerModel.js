@@ -28,7 +28,7 @@ const customerSchema = new mongoose.Schema({
         type:Array,
         default:[]
     },
-    currentRoom: {
+    assignedRoom: {
         type: Number,
         default:0
     },
