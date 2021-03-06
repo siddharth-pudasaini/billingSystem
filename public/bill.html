@@ -5,17 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='./css/style.css'>
+    <link rel="stylesheet" href='./css/bill.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <script type='text/javascript' src='./js/script.js' defer></script>
+<script type='text/javascript' src='./js/bill.js' defer></script>
+
 <body>
-    <ul>
-        <li><a  href="/">Home</a></li>
-        <li><a href="/error">Error</a></li>
-        <li><a href="/setting">Contact</a></li>
-        <li><a href="/data">About</a></li>
-      </ul>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/checkIn">CheckIn</a>
+        <a href="/bill">Manage Bill</a>
+        <a href="/checkOut">Check Out</a>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/addRoom">Add Room</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div> 
+      </div>
+    <div class='billBody'>
+        <h1>Receipt</h1>
+        <div class='details'>
+            <label> Room no:</label>
+                <input type='text' name='roomNumber'>
+                <input type='button' value="Search">
+        </div>
+        <div class='itemManager'>
+            <div class='addNewItem'>
+                <h2>Add items to the bill</h2>
+                <div class='itemForm'>
+                    <div class='heading'>
+                        <label>Item:</label>
+                        <input type='text' name='itemName'>
+                    </div>
+                    <div class='heading'>
+                        <label>Quantity:</label>
+                        <input type='text' name='quantity'>
+                    </div>
+                    <div class='heading'>
+                        <label>Price:</label>
+                        <input type='text' name='price'>
+                    </div>
+                    <div class='heading'>
+                        <input type='button' value="Add" onclick="addItem()">
+                    </div>
+                   
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class='billItems'>
+            <div class='billHeadings'>
+                <h3>S.N.</h3>
+                <h3>Item</h3>
+                <h3>Quantity</h3>
+                <h3>Price</h3>
+                <h3>Total</h3>
+            </div>
+            <div class='itemDetails'>
+                <h4>Hello</h4>
+                <h4>Hello</h4>
+                <h4>Hello</h4>
+                <h4>Hello</h4>
+                <h4>Hello</h4>
+            </div>
+        </div>
+    </div>
+    
 </body>
+
      
 
     

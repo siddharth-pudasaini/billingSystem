@@ -1,27 +1,43 @@
-const mongoose = require('mongoose')
-
+const mongoose = require('mongoose');
 
 const roomSchema = new mongoose.Schema({
     roomNumber: {
-        type: Number,
-        required:true
+        type: String,
+        required: true,
+        unique: true,
     },
-    facilities: {
-        type: Array,
-        default:[]
+    television: {
+        type: Boolean,
+        default: false,
+    },
+    ac: {
+        type: Boolean,
+        default: false,
+    },
+    hotWater: {
+        type: Boolean,
+        default: false,
+    },
+    attachedBathroom: {
+        type: Boolean,
+        default: false,
+    },
+    vaccant: {
+        type: Boolean,
+        default: true,
     },
     currentInvoice: {
-        type: String,
-        default:None
+        type: Number,
+        default: null,
     },
     currentCustomer: {
         type: String,
-        default:None
+        default: null,
     },
     pastInvoices: {
         type: Array,
-        default:[]
-    }
-})
+        default: [],
+    },
+});
 
-module.exports=mongoose.model('Room',roomSchema)
+module.exports = mongoose.model('Room', roomSchema);

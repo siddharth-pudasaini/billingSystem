@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='./css/style.css'>
+    <link rel="stylesheet" href='./css/addRoom.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+</head>
+<script type='text/javascript' src='./js/script.js' defer></script>
+<script type='text/javascript' src='./js/auth.js' defer></script>
+<script type='text/javascript' src='./js/addRoom.js' defer></script>
+<style>
+
+</style>
+<body>
+
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/checkIn">CheckIn</a>
+    <a href="/bill">Manage Bill</a>
+    <a href="/checkOut">Check Out</a>
+    <div class="dropdown">
+      <button class="dropbtn">Tools
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/addRoom">Add Room</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+  </div>
+
+      <div class="addRoomForm">
+        <fieldset>
+          <legend><h1>Add room</h1></legend>
+          <div class='formDetails'>
+            <label>Room No:</label>
+            <input type='text' name='roomNumber'> 
+            <div class='facilitiesDetails'>
+              <label>Facilities:</label>
+              <div class='facility'>
+                <input type='checkbox' value='television' name='television'>
+                <label for='Television'> Television</label>
+              </div>
+              <div class='facility'>
+                <input type='checkbox' value='ac' name='ac'>
+                <label for='AC'> AC</label>
+              </div>
+              <div class='facility'>
+                <input type='checkbox' value='hotWater' name='hotWater'>
+                <label for='Hot Water'> Hot Water</label>
+              </div>
+              <div class='facility'>
+                <input type='checkbox' value='attachedBathroom' name='attachedRoom'>
+                <label for='Attached Room'> Attached Bathroom</label>
+              </div>
+            </div>
+            <input type='button' value='Add Room' onclick='addRoom()'>
+          </div>
+        </fieldset>
+      </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

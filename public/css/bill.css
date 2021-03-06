@@ -1,0 +1,92 @@
+.billBody{
+    margin: 0;
+    padding: 10px;
+   margin-top: 10px;
+    width:90%;
+    height:auto;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    border:1px solid cadetblue
+}
+
+h1{
+    text-align: center
+}
+.details{
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px;
+    align-items: center
+}
+
+
+.itemManager{
+    margin:0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+input[type=button]{
+    color:green;
+    border: 1px solid green;
+    box-sizing: border-box;
+    width:auto;
+    height: 30px;
+    font-size: 18px;
+    background:white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+input[type=button]:hover{
+    color:whitesmoke;
+    background-color:green;
+    transition-duration: 150ms;
+}
+h2{
+    text-align:center
+}
+.addNewItem{
+    display: inline-block;
+    padding: 10px
+}
+.itemForm{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width:90%;
+}
+.heading{
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    align-items: center
+}
+input{
+    font: size 20px;
+    box-sizing: border-box;
+    height:30px;
+    align-items: center;
+    padding: 5px
+}
+
+label{
+    font-size: 18px;
+}
+
+.billHeadings,.itemDetails{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start
+}
+h3,h4{
+    margin-right: 5%;
+    margin-left:5%
+}
+

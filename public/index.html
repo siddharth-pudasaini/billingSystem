@@ -5,19 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='./css/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
 <script type='text/javascript' src='./js/script.js' defer></script>
+<script type='text/javascript' src='./js/auth.js' defer></script>
+<style>
+
+</style>
 <body>
-  <ul>
-    <li><a  href="/">Home</a></li>
-    <li><a href="/checkIn">Check In</a></li>
-    <li><a href="/bill">Manage Bill</a></li>
-    <li><a href="/checkOut">Check Out</a></li>
-    <li><a href="/tools">Tools</a></li>
-  </ul>
+
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/checkIn">CheckIn</a>
+    <a href="/bill">Manage Bill</a>
+    <a href="/checkOut">Check Out</a>
+    <div class="dropdown">
+      <button class="dropbtn">Tools
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/addRoom">Add Room</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+  </div>
   
-    <img src='./images/_MG_7233.JPG' height='100%' width='100%'>
+  <div class='sideMenu'>
+    <br>
+    <div class='sideMenuItem'>
+      <p>Hello</p>
+    </div>
+    <div class='sideMenuItem'>
+      <p>Hello</p>
+    </div>
+    <div class='sideMenuItem'>
+      <p>Hello</p>
+    </div>
+    <div class='sideMenuItem'>
+      <p>Hello</p>
+    </div>
+  </div>
 </body>
 </html>
 

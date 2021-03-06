@@ -1,39 +1,78 @@
-.billBody{
-    margin: 0 auto;
-    width: 1000px;
+.pageBody{
+  display:flex;
+}
+
+
+fieldset.checkInForm{
+    width: 800px;
     height:fit-content;
-    background:lightgoldenrodyellow;
     padding: 20px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
-    border: 0.5px solid black;
+    margin-left: 10px;
+    border: 1px solid cadetblue;
     box-sizing: border-box;
-    border-radius: 25px
 }
-form{
-    padding: 20px
+h2{
+  text-align: center;
+  color: cadetblue;
 }
+
 label{
     font: size 10px;
     color:black
 }
-input[type=text] {
+input[type=text],[type=number],[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
-  button{
-    background-color:#4CAF50;
-    border: none;
-    color: white;
+  input[type=button]{
+    background-color:white;
+    color:green;
+    border: 1px solid green;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
     width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  input[type=button]:hover{
+    background-color:green;
+    color:white;
+    transition-duration: 200ms;
+
   }
 
   input[type=text]:focus {
     border: 1px solid #4CAF50;
+  }
+
+  .vaccantRooms{
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    width: 400px;
+    height: fit-content;
+    border: 0.5px solid cadetblue
+
+  }
+
+  ul{
+    list-style: none
+  }
+  li{
+    font-size: 18px;
+    color:green;
+    margin-bottom:5px
+  }
+  p{
+    font-size: 18px;
+    color:red
   }

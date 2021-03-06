@@ -6,33 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='./css/style.css'>
     <link rel="stylesheet" href='./css/checkIn.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
 <script type='text/javascript' src='./js/script.js' defer></script>
+<script type='text/javascript' src='./js/auth.js' defer></script>
+<script type='text/javascript' src='./js/checkIn.js' defer></script>
 <body>
-  <ul>
-    <li><a  href="/">Home</a></li>
-    <li><a href="/checkIn">Check In</a></li>
-    <li><a href="/bill">Manage Bill</a></li>
-    <li><a href="/checkOut">Check Out</a></li>
-    <li><a href="/tools">Tools</a></li>
-  </ul>
-  
-    <div class='billBody'>
-            <label>Name:</label>
-            <input type='text' name='name' required>
-            <label>Nationality:</label>
-            <input type='text' name='nationality' required>
-            <label>Id Number:</label>
-            <input type='text'  name='idNumber'required>
-            <label>Id type:</label>
-            <input type='text' name='idType' required>
-            <label>Contact:</label>
-            <input type='text'name='contact' required>
-            <label>Assigned Room:</label>
-            <input type='text' name='assignedRoom'>
-            <button onclick="myFunction()"> Check In</button>
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/checkIn">CheckIn</a>
+    <a href="/bill">Manage Bill</a>
+    <a href="/checkOut">Check Out</a>
+    <div class="dropdown">
+      <button class="dropbtn">Tools
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/addRoom">Add Room</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+  </div>
+ 
+    <div class='pageBody'>
+        <fieldset class='checkInForm'>
+          <legend><h2>Check In Form</h2></legend>
+          <label>Name:</label>
+          <input type='text' name='name' required >
+              <label>Nationality:</label>
+              <input type='text' name='nationality' required>
+              <label>Id Number:</label>
+              <input type='text'  name='idNumber'required>
+              <label>Id type:</label>
+              <input type='text' name='idType' required>
+              <label>No of Vehicles:</label>
+              <input type='number' name='noOfVehicles' value=0 min=0 onchange="vehicleInput(this.value)">
+              <div class='vehicleData'>
+              </div>
+              <label>Contact:</label>
+              <input type='text'name='contact' required>
+              <label>Email:</label>
+              <input type='email'name='emailAddress' required>
+              <label>Assigned Room:</label>
+              <input type='text' name='assignedRoom'>
+              <input type="button" value='Check In' onclick="addCustomerToDatabase()"> 
+          </fieldset>      
+    
+        <fieldset class='vaccantRooms'>
+          <legend><h2>Vaccant Rooms</h2></legend>
+          <ul>
+          </ul>
+        </fieldset>
     </div>
+    
    
 </body>
 </html>
