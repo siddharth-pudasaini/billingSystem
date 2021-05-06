@@ -5,65 +5,175 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='./css/style.css'>
-    <link rel="stylesheet" href='./css/addRoom.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
 <script type='text/javascript' src='./js/script.js' defer></script>
 <script type='text/javascript' src='./js/auth.js' defer></script>
-<script type='text/javascript' src='./js/addRoom.js' defer></script>
 <style>
 
 </style>
 <body>
 
   <div class="navbar">
-    <a href="/">Home</a>
-    <a href="/checkIn">CheckIn</a>
-    <a href="/bill">Manage Bill</a>
-    <a href="/checkOut">Check Out</a>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="/addRoom">Add Room</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div> 
   </div>
+  <div class='main-content'>
+    <div class='sideMenu'></div>
 
-      <div class="addRoomForm">
-        <fieldset>
-          <legend><h1>Add room</h1></legend>
-          <div class='formDetails'>
-            <label>Room No:</label>
-            <input type='text' name='roomNumber'> 
-            <div class='facilitiesDetails'>
-              <label>Facilities:</label>
-              <div class='facility'>
-                <input type='checkbox' value='television' name='television'>
-                <label for='Television'> Television</label>
-              </div>
-              <div class='facility'>
-                <input type='checkbox' value='ac' name='ac'>
-                <label for='AC'> AC</label>
-              </div>
-              <div class='facility'>
-                <input type='checkbox' value='hotWater' name='hotWater'>
-                <label for='Hot Water'> Hot Water</label>
-              </div>
-              <div class='facility'>
-                <input type='checkbox' value='attachedBathroom' name='attachedRoom'>
-                <label for='Attached Room'> Attached Bathroom</label>
-              </div>
+    <div class="addRoomForm">
+      <fieldset>
+        <legend>
+          <h1>Add room</h1>
+        </legend>
+        <div class='formDetails'>
+          <label>Room No:</label>
+          <input type='text' name='roomNumber'>
+          <div class='facilitiesDetails'>
+            <label>Facilities:</label>
+            <div class='facility'>
+              <input type='checkbox' value='television' name='television'>
+              <label for='Television'> Television</label>
             </div>
-            <input type='button' value='Add Room' onclick='addRoom()'>
+            <div class='facility'>
+              <input type='checkbox' value='ac' name='ac'>
+              <label for='AC'> AC</label>
+            </div>
+            <div class='facility'>
+              <input type='checkbox' value='hotWater' name='hotWater'>
+              <label for='Hot Water'> Hot Water</label>
+            </div>
+            <div class='facility'>
+              <input type='checkbox' value='attachedBathroom' name='attachedRoom'>
+              <label for='Attached Room'> Attached Bathroom</label>
+            </div>
           </div>
-        </fieldset>
-      </div>
+          <input type='button' value='Add Room' onclick='addRoom()'>
+        </div>
+      </fieldset>
+    </div>
+  
+  </div>
+      
 </body>
+
+<style>
+    .addRoomForm {
+    margin: 10px;
+    padding: 20px;
+    width: 50%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 1px solid cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+h1 {
+    color: cadetblue;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+}
+
+input {
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type='button'] {
+    box-sizing: border-box;
+    background-color: white;
+    width: fit-content;
+    height: 40px;
+    border: 1px solid green;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: green;
+}
+
+input[type='button']:hover {
+    background-color: green;
+    color: whitesmoke;
+    transition-duration: 200ms;
+    transform: scale(1.07);
+}
+
+input[type='text'] {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 200px;
+    height: 35px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.facility {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 1px;
+}
+
+</style>
+<script>
+  const addRoom = async () => {
+      let apiData = {};
+      const inputData = document.querySelectorAll('input');
+      for (i = 0; i < inputData.length; i++) {
+        let item = inputData[i];
+
+        if (item.value === '') {
+          alert('Insert All Data');
+          return;
+        }
+        if (item.type === 'text' && item.value !== '') {
+          apiData[item.name] = item.value;
+        }
+        if (item.type === 'checkbox') {
+          apiData[item.value] = item.checked;
+        }
+      }
+
+      const apiResponse = await fetch(
+        'http://192.168.1.70:8000/api/room/addRoom',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(apiData),
+        }
+      );
+
+      const response = await apiResponse.json();
+      console.log(response);
+      if (response.status === 'success') {
+        alert('Room added successfully');
+        location.reload();
+      }
+      if (response.status === 'failed') {
+        alert(response.message);
+        location.reload();
+      }
+    };
+
+</script>
 </html>
 
 

@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv').config({ path: './config.env' });
 
 //Importing route middlewares
@@ -29,6 +30,7 @@ app.get('/addRoom', (req, res) => {
 });
 
 //Middlewares
+app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
@@ -53,6 +55,6 @@ mongoose.connect(
 );
 
 //Initializing server
-app.listen(port, async () => {
+app.listen(port, () => {
     console.log(`App running on port ${port}`);
 });

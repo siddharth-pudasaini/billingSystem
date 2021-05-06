@@ -11,17 +11,46 @@ exports.addRoom = async (req, res) => {
         });
     } catch (error) {
         //Sending error that the room already exists
-        return res.json({
+        return res.status(400).json({
             status: 'failed',
             message: 'Room already exists',
         });
     }
 };
 
+exports.addCustomerToRoom = async (room, invoiceNumber, customer) => {
+    //Putting current user and current invoice information to room's database
+    try {
+        await Room.findOneAndUpdate(
+            { roomNumber: room },
+            {
+                currentInvoice: invoiceNumber,
+                currentCustomer: customer,
+                vaccant: false,
+            }
+        );
+        return true;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+};
+
 exports.getRoomData = async (req, res) => {
     const roomDatas = await Room.find(req.query, { roomNumber: 1 });
-    res.json({
+    return res.json({
         status: 'success',
         data: roomDatas,
     });
+};
+
+exports.checkRoomStatus = async (roomNumber) => {
+    const room = await Room.findOne({ roomNumber: roomNumber });
+    if (!room) {
+        return "Room doesn't exist";
+    }
+    if (!room.vaccant) {
+        return 'Room is not vaccant';
+    }
+    return true;
 };
