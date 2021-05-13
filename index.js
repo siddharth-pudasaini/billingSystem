@@ -42,17 +42,18 @@ app.use('/api/room', roomRoutes);
 const port = process.env.PORT || 8000;
 
 //Database connection
-mongoose.connect(
-    process.env.DATABASE,
-    {
+mongoose
+    .connect(process.env.DATABASE, {
         useNewUrlParser: true,
         useFindAndModify: true,
         useUnifiedTopology: true,
-    },
-    () => {
+    })
+    .then(() => {
         console.log(`Database connected`);
-    }
-);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 //Initializing server
 app.listen(port, () => {
